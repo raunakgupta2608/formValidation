@@ -25,11 +25,11 @@ function FormComponent() {
     console.log(formErrors)
     if(Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValue)
-      // setTimeout(() => {
-      //   setFormValue(initalValues)
-      //   setFormErrors({})
-      //   setIsSubmit(false)
-      // },5000)
+      setTimeout(() => {
+        setFormValue(initalValues)
+        setFormErrors({})
+        setIsSubmit(false)
+      },5000)
     }
   }, [formErrors])
   const validate = (values) => {
@@ -92,6 +92,7 @@ function FormComponent() {
     </div>
 
     {isSubmit ? <div className='displayData'>
+        <p>This div will dismiss after 5 seconds</p>
         <ListGroup>
             <ListGroupItem>Name : <Badge color="secondary">{ username }</Badge></ListGroupItem>
             <ListGroupItem>Age : <Badge color="secondary">{ age }</Badge></ListGroupItem>
